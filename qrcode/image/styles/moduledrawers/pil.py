@@ -79,7 +79,7 @@ class RhombusModuleDrawer(StyledPilQRModuleDrawer):
 
     def drawrect(self, box, is_active: bool):
     # def drawrhombus(self, box, is_active: bool):
-        if is_active:
+        if is_active and len(box) == 3: 
             # Coordinates for the vertices of a rhombus
             x1, y1 = (box[0][0] + box[1][0]) // 2, box[0][1]
             x2, y2 = box[1][0], (box[1][1] + box[2][1]) // 2
