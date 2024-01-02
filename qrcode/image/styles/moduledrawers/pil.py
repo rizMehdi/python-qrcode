@@ -67,29 +67,6 @@ class GappedSquareModuleDrawer(StyledPilQRModuleDrawer):
             self.imgDraw.rectangle(smaller_box, fill=self.img.paint_color)
 
 
-
-# class RhombusModuleDrawer(StyledPilQRModuleDrawer):
-#     """
-#     Draws the modules as Rhombuses
-#     """
-
-#     def initialize(self, *args, **kwargs):
-#         super().initialize(*args, **kwargs)
-#         self.imgDraw = ImageDraw.Draw(self.img._img)
-
-#     def drawrect(self, box, is_active: bool):
-#     # def drawrhombus(self, box, is_active: bool):
-#         if is_active and len(box) == 3: 
-#             # Coordinates for the vertices of a rhombus
-#             x1, y1 = (box[0][0] + box[1][0]) // 2, box[0][1]
-#             x2, y2 = box[1][0], (box[1][1] + box[2][1]) // 2
-#             x3, y3 = (box[0][0] + box[1][0]) // 2, box[2][1]
-#             x4, y4 = box[0][0], (box[0][1] + box[2][1]) // 2
-
-#             rhombus_vertices = [(x1, y1), (x2, y2), (x3, y3), (x4, y4)]
-
-#             self.imgDraw.polygon(rhombus_vertices, fill=self.img.paint_color)
-
 class RhombusModuleDrawer(StyledPilQRModuleDrawer):
     """
     Draws the modules as rhombuses
@@ -120,7 +97,7 @@ class RhombusModuleDrawer(StyledPilQRModuleDrawer):
         if is_active and self.rhombus:
             self.img._img.paste(self.rhombus, (box[0][0], box[0][1]))
 
-            
+
 class CircleModuleDrawer(StyledPilQRModuleDrawer):
     """
     Draws the modules as circles
